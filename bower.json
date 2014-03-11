@@ -1,0 +1,16 @@
+{
+  "name": "angular-bind-html-compile",
+  "version": "1.0.0",
+  "authors": [
+    "Perry Roper <perryroper@gmail.com>"
+  ],
+  "main": "angular-bind-html-compile.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
