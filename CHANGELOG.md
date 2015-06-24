@@ -1,3 +1,7 @@
+# Update
+
+* BUGFIX: ensure element.html() always gets an HTML string if given the result of a $sce method, a TrustedValueHolderType.
+
 # 1.0.1
 
 * Add AngularJS dependency.
