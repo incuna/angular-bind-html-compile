@@ -6,15 +6,25 @@
     module.directive('bindHtmlCompile', ['$compile', function ($compile) {
         return {
             restrict: 'A',
+            scope: {
+                bindHtmlCompile: '=',
+                bindHtmlScope: '='
+            },
             link: function (scope, element, attrs) {
                 scope.$watch(function () {
-                    return scope.$eval(attrs.bindHtmlCompile);
+                    return scope.bindHtmlCompile;
                 }, function (value) {
                     // Incase value is a TrustedValueHolderType, sometimes it
                     // needs to be explicitly called into a string in order to
                     // get the HTML string.
                     element.html(value && value.toString());
-                    $compile(element.contents())(scope);
+                    if (scope.bindHtmlScope) {
+                        // If a scope was provided, use it
+                        $compile(element.contents())(scope.bindHtmlScope);
+                    } else {
+                        // Otherwise use parent scope
+                        $compile(element.contents())(scope.$parent);
+                    }
                 });
             }
         };
