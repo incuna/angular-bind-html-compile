@@ -11,9 +11,7 @@
                 bindHtmlScope: '=?'
             },
             link: function (scope, element, attrs) {
-                scope.$watch(function () {
-                    return scope.bindHtmlCompile;
-                }, function (value) {
+                scope.$watch('bindHtmlCompile', function (value) {
                     // Incase value is a TrustedValueHolderType, sometimes it
                     // needs to be explicitly called into a string in order to
                     // get the HTML string.
