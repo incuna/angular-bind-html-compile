@@ -16,13 +16,9 @@
                     // needs to be explicitly called into a string in order to
                     // get the HTML string.
                     element.html(value && value.toString());
-                    if (scope.bindHtmlScope) {
-                        // If a scope was provided, use it
-                        $compile(element.contents())(scope.bindHtmlScope);
-                    } else {
-                        // Otherwise use parent scope
-                        $compile(element.contents())(scope.$parent);
-                    }
+                    // If scope is provided use it, otherwise use parent scope
+                    var compileScope = scope.bindHtmlScope || scope.$parent;
+                    $compile(element.contents())(compileScope);
                 });
             }
         };
