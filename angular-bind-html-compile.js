@@ -8,7 +8,7 @@
             restrict: 'A',
             scope: {
                 bindHtmlCompile: '=',
-                bindHtmlScope: '='
+                bindHtmlScope: '=?'
             },
             link: function (scope, element, attrs) {
                 scope.$watch(function () {
