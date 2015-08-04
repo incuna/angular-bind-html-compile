@@ -15,7 +15,10 @@
                     // get the HTML string.
                     element.html(value && value.toString());
                     // If scope is provided use it, otherwise use parent scope
-                    var compileScope = scope.$eval(attrs.bindHtmlScope) || scope;
+                    var compileScope = scope;
+                    if (attrs.bindHtmlScope) {
+                        compileScope = scope.$eval(attrs.bindHtmlScope);
+                    }
                     $compile(element.contents())(compileScope);
                 });
             }
