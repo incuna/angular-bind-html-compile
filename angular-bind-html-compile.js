@@ -6,10 +6,10 @@
     module.directive('bindHtmlCompile', ['$compile', function ($compile) {
         return {
             restrict: 'A',
-            link: function(scope, element, attrs) {
+            link: function (scope, element, attrs) {
                 scope.$watch(function() {
                     return scope.$eval(attrs.bindHtmlCompile);
-                }, function(value) {
+                }, function (value) {
                     // Incase value is a TrustedValueHolderType, sometimes it
                     // needs to be explicitly called into a string in order to
                     // get the HTML string.
