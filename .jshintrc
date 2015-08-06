@@ -14,5 +14,6 @@
     "noarg": true,
     "undef": true,
     "unused": "vars",
-    "browser": true
+    "browser": true,
+    "node": true
 }
