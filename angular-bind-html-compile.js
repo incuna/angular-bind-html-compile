@@ -14,7 +14,12 @@
                     // needs to be explicitly called into a string in order to
                     // get the HTML string.
                     element.html(value && value.toString());
-                    $compile(element.contents())(scope);
+                    // If scope is provided use it, otherwise use parent scope
+                    var compileScope = scope;
+                    if (attrs.bindHtmlScope) {
+                        compileScope = scope.$eval(attrs.bindHtmlScope);
+                    }
+                    $compile(element.contents())(compileScope);
                 });
             }
         };
