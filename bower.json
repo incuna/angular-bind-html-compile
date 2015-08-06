@@ -1,7 +1,8 @@
 {
   "name": "angular-bind-html-compile",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "authors": [
+    "Graham Gilchrist <graham@incuna.com>"
     "Perry Roper <perryroper@gmail.com>"
   ],
   "main": "angular-bind-html-compile.js",
