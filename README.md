@@ -1,5 +1,5 @@
 # angular-bind-html-compile
-This repo contains a bower package that provides an angular directive which can be passed trusted html angular template content to evaluate.
+This repo contains a bower package that provides an angular directive which can be passed trusted html with angular template content to evaluate.
 
 The `bind-html-compile` directive allows for HTML containing directives to be compiled.
 
