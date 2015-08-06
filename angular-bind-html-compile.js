@@ -7,7 +7,7 @@
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
-                scope.$watch(function() {
+                scope.$watch(function () {
                     return scope.$eval(attrs.bindHtmlCompile);
                 }, function (value) {
                     // Incase value is a TrustedValueHolderType, sometimes it
