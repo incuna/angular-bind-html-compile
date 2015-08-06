@@ -6,7 +6,12 @@ The `bind-html-compile` directive allows for HTML containing directives to be co
 You should only use this directive where the content is coming from a trusted
 source.
 
-## Example usage 
+## Install
+Install via [bower](http://bower.io)
+
+* `bower install angular-bind-html-compile`
+
+## Usage 
 `ng-bind-html`:
 ```
 <div ng-bind-html="data.content"></div>
@@ -18,6 +23,11 @@ If the `data.content` contained a directive, it would not be compiled.
 ```
 <div bind-html-compile="data.content"></div>
 ```
+
+## Development
+* Contributions welcome - Create an issue to discuss proposed changes and additions
+* All contributions should be done in branches and submitted as pull requests.
+* Code style follows the [jsHint](http://jshint.com/docs/) and [jscs](http://jscs.info/) rules in `.jshintrc` and `jscsrc`. Automated travis tests will fail if these are not adhered to.
 
 ## Releasing a new version
 
