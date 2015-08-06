@@ -1,4 +1,4 @@
-(function () {
+(function (angular) {
     'use strict';
 
     var module = angular.module('angular-bind-html-compile', []);
@@ -24,4 +24,4 @@
             }
         };
     }]);
-}());
+}(window.angular));

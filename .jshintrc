@@ -1,0 +1,19 @@
+{
+    "strict": true,
+    "es3": true,
+    "curly": true,
+    "eqeqeq": true,
+    "indent": 4,
+    "quotmark": true,
+    "sub": true,
+    "trailing": true,
+    "white": true,
+    "immed": true,
+    "latedef": "nofunc",
+    "newcap": true,
+    "noarg": true,
+    "undef": true,
+    "unused": "vars",
+    "browser": true,
+    "node": true
+}
