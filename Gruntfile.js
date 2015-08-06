@@ -1,8 +1,5 @@
 'use strict';
 
-var _ = require('lodash');
-var fs = require('fs');
-
 module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
