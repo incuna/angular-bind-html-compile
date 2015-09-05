@@ -11,6 +11,10 @@ Install via [bower](http://bower.io)
 
 * `bower install angular-bind-html-compile`
 
+Add dependency to your app module
+
+* `'angular-bind-html-compile'`
+
 ## Usage 
 `ng-bind-html`:
 ```
