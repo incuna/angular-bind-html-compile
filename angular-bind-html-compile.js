@@ -10,7 +10,7 @@
                 scope.$watch(function () {
                     return scope.$eval(attrs.bindHtmlCompile);
                 }, function (value) {
-                    // Incase value is a TrustedValueHolderType, sometimes it
+                    // In case value is a TrustedValueHolderType, sometimes it
                     // needs to be explicitly called into a string in order to
                     // get the HTML string.
                     element.html(value && value.toString());
