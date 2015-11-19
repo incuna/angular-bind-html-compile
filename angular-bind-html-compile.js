@@ -1,9 +1,9 @@
 (function (angular) {
     'use strict';
 
-    var module = angular.module('angular-bind-html-compile', []);
+    var mod = angular.module('angular-bind-html-compile', []);
 
-    module.directive('bindHtmlCompile', ['$compile', function ($compile) {
+    mod.directive('bindHtmlCompile', ['$compile', function ($compile) {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
@@ -24,4 +24,8 @@
             }
         };
     }]);
+
+    if (module && module.exports) {
+        module.exports = mod.name;
+    }
 }(window.angular));
