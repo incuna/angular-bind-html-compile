@@ -28,7 +28,7 @@ module.exports = function (grunt) {
         uglify: {
             build: {
                 files: {
-                    'angular-bind-html-compile.min.js': 'angular-bind-html-compile.js',
+                    'angular-bind-html-compile.min.js': 'angular-bind-html-compile.js'
                 }
             }
         }
