@@ -8,7 +8,8 @@ module.exports = function (grunt) {
         // Configurable paths
         config: {
             lintFiles: [
-                'angular-bind-html-compile.js'
+                '**/*.js',
+                '!*.min.js'
             ]
         },
         jshint: {
