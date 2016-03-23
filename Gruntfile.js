@@ -8,7 +8,8 @@ module.exports = function (grunt) {
         // Configurable paths
         config: {
             lintFiles: [
-                '**/*.js'
+                '**/*.js',
+                '!*.min.js'
             ]
         },
         jshint: {
@@ -24,6 +25,13 @@ module.exports = function (grunt) {
                 config: '.jscsrc'
             },
             src: '<%= config.lintFiles %>'
+        },
+        uglify: {
+            build: {
+                files: {
+                    'angular-bind-html-compile.min.js': 'angular-bind-html-compile.js'
+                }
+            }
         }
     });
 
@@ -34,5 +42,9 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'lint'
+    ]);
+
+    grunt.registerTask('build', [
+        'uglify'
     ]);
 };
