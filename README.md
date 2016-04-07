@@ -55,6 +55,7 @@ Example Plunkers:
 
 * [Example of before and after compile hooks](http://plnkr.co/edit/f4LobH?p=preview)
 
+
 ## Development
 * Contributions welcome - Create an issue to discuss proposed changes and additions
 * All contributions should be done in branches and submitted as pull requests.
