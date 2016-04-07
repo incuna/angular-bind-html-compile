@@ -11,7 +11,6 @@
             afterCompile: '&bindHtmlAfterCompile'
           },
           link: function (scope, element, attrs) {
-              console.log("scope", scope)
               scope.$parent.$watch(function () {
                   return scope.$parent.$eval(attrs.bindHtmlCompile);
               }, function (value) {
