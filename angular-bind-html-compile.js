@@ -28,8 +28,6 @@
                   if (attrs.bindHtmlScope) {
                       compileScope = scope.$parent.$eval(attrs.bindHtmlScope);
                   }
-
-                  //console.log("compiling...")
                   $compile(element.contents())(compileScope);
 
                   // After compile hook
