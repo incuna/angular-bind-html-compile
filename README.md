@@ -28,13 +28,13 @@ If the `data.content` contained a directive, it would not be compiled.
 <div bind-html-compile="data.content"></div>
 ```
 
-Additionally, bind-html-before-compile and/or bindHtmlAfterCompile
+Additionally, bind-html-before-compile and/or bind-html-after-compile
 may be specified to execute code before of after the compile.  E.g:
 
 ```
 <div bind-html-compile="data.content"
      bind-html-before-compile="beforeCompile"
-     bind-thml-after-compile="afterCompile"></div>
+     bind-html-after-compile="afterCompile"></div>
 ```
 
 And in your controller code:
