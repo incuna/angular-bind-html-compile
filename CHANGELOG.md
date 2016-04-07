@@ -1,3 +1,7 @@
+### 1.3.0
+
+* Added hooks before and after compile
+
 ### 1.2.1
 
 * Change strict angular dependency to `~1.x`

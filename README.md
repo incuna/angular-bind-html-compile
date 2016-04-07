@@ -15,7 +15,7 @@ Add dependency to your app module
 
 * `'angular-bind-html-compile'`
 
-## Usage 
+## Usage
 `ng-bind-html`:
 ```
 <div ng-bind-html="data.content"></div>
@@ -27,6 +27,33 @@ If the `data.content` contained a directive, it would not be compiled.
 ```
 <div bind-html-compile="data.content"></div>
 ```
+
+Additionally, bind-html-before-compile and/or bindHtmlAfterCompile
+may be specified to execute code before of after the compile.  E.g:
+
+```
+<div bind-html-compile="data.content"
+     bind-html-before-compile="beforeCompile"
+     bind-thml-after-compile="afterCompile"></div>
+```
+
+And in your controller code:
+```
+...
+  function beforeCompile(element) {
+      // do something, e.g add angular attributes and directives to
+      // the HTML that was bound before it gets compiled
+      angular.element("input[name=someField]").attr("ng-model", "data.someField");
+  }
+  function afterCompile(element) {
+      // do something, e.g. toggle visibility back on if you had
+      // hidden the div while changing the HTML content
+  }
+```
+
+Example Plunkers:
+
+* [Example of before and after compile hooks](http://plnkr.co/edit/f4LobH?p=preview)
 
 ## Development
 * Contributions welcome - Create an issue to discuss proposed changes and additions
