@@ -4,24 +4,40 @@
     var module = angular.module('angular-bind-html-compile', []);
 
     module.directive('bindHtmlCompile', ['$compile', function ($compile) {
-        return {
-            restrict: 'A',
-            link: function (scope, element, attrs) {
-                scope.$watch(function () {
-                    return scope.$eval(attrs.bindHtmlCompile);
-                }, function (value) {
-                    // In case value is a TrustedValueHolderType, sometimes it
-                    // needs to be explicitly called into a string in order to
-                    // get the HTML string.
-                    element.html(value && value.toString());
-                    // If scope is provided use it, otherwise use parent scope
-                    var compileScope = scope;
-                    if (attrs.bindHtmlScope) {
-                        compileScope = scope.$eval(attrs.bindHtmlScope);
-                    }
-                    $compile(element.contents())(compileScope);
-                });
-            }
-        };
+      return {
+          restrict: 'A',
+          scope: {
+            beforeCompile:'&bindHtmlBeforeCompile',
+            afterCompile: '&bindHtmlAfterCompile'
+          },
+          link: function (scope, element, attrs) {
+              console.log("scope", scope)
+              scope.$parent.$watch(function () {
+                  return scope.$parent.$eval(attrs.bindHtmlCompile);
+              }, function (value) {
+                  // In case value is a TrustedValueHolderType, sometimes it
+                  // needs to be explicitly called into a string in order to
+                  // get the HTML string.
+                  element.html(value && value.toString());
+
+                  // beforeCompile hook
+                  var beforeCompile = scope.beforeCompile();
+                  beforeCompile && beforeCompile(element)
+
+                  // If scope is provided use it, otherwise use parent scope
+                  var compileScope = scope.$parent;
+                  if (attrs.bindHtmlScope) {
+                      compileScope = scope.$parent.$eval(attrs.bindHtmlScope);
+                  }
+
+                  //console.log("compiling...")
+                  $compile(element.contents())(compileScope);
+
+                  // After compile hook
+                  var afterCompile = scope.afterCompile();
+                  afterCompile && afterCompile(element)
+              });
+          }
+      };
     }]);
 }(window.angular));
