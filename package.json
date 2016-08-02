@@ -1,6 +1,8 @@
 {
   "name": "angular-bind-html-compile",
   "version": "1.2.1",
+  "homepage": "https://github.com/incuna/angular-bind-html-compile",
+  "repository": "incuna/angular-bind-html-compile",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
