@@ -39,7 +39,7 @@
                                 if (scope.$$destroyed) {return;}
                             });
                         }
-                });
+                  });
             }
         };
     }]);
