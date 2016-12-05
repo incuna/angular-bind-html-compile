@@ -3,7 +3,7 @@
 
     var module = angular.module('angular-bind-html-compile', []);
 
-    module.directive('bindHtmlCompile', ['$templateRequest','$compile', function ($templateRequest,$compile) {
+    module.directive('bindHtmlCompile', ['$templateRequest', '$compile', function ($templateRequest, $compile) {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
@@ -25,8 +25,8 @@
                         return scope.$eval(attrs.templateUrl);
                     }, function (src) {
                         if (src) {
-                            //set the 2nd param to true to ignore the template request error so that the inner
-                            //contents and scope can be cleaned up.
+                            // set the 2nd param to true to ignore the template request error so that the inner
+                            // contents and scope can be cleaned up.
                             $templateRequest(src, true).then(function (html) {
                                 var tpl = angular.element(html);
                                 element.append(tpl);
