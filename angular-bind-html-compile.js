@@ -3,7 +3,7 @@
 
     var module = angular.module('angular-bind-html-compile', []);
 
-    module.directive('bindHtmlCompile', ['$compile', function ($compile) {
+    module.directive('bindHtmlCompile', ['$templateRequest','$compile', function ($templateRequest,$compile) {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
@@ -20,6 +20,25 @@
                         compileScope = scope.$eval(attrs.bindHtmlScope);
                     }
                     $compile(element.contents())(compileScope);
+                });
+                scope.$watch(function () {
+                        return scope.$eval(attrs.templateUrl);
+                    }, function (src) {
+                        if (src) {
+                            //set the 2nd param to true to ignore the template request error so that the inner
+                            //contents and scope can be cleaned up.
+                            $templateRequest(src, true).then(function (html) {
+                                var tpl = angular.element(html);
+                                element.append(tpl);
+                                var compileScope = scope;
+                                if (attrs.templateUrl) {
+                                    compileScope = scope.$eval(attrs.templateUrl);
+                                }
+                                $compile(tpl)(compileScope)
+                            }, function () {
+                                if (scope.$$destroyed) return;
+                            });
+                        };
                 });
             }
         };
