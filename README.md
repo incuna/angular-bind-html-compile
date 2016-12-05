@@ -1,7 +1,7 @@
 # angular-bind-html-compile
 This repo contains a bower package that provides an angular directive which can be passed trusted html with angular template content to evaluate.
 
-The `bind-html-compile` directive allows for HTML containing **custom** directives to be compiled.
+The `bind-html-compile` directive allows for HTML containing directives to be compiled.
 
 You should only use this directive where the content is coming from a trusted
 source.
@@ -21,7 +21,7 @@ Just like the standard `ng-bind-html`, `bind-html-compile` goes like this:
 <div bind-html-compile="data.content"></div>
 ```
 
-(Unlike the standard `ng-bind-html`, `bind-html-compile` compiles directives, and even those custom ones.)
+(However, unlike the standard `ng-bind-html`, `bind-html-compile` compiles directives!)
 
 `template-url` attribute can be used to load a template file:
 ```
