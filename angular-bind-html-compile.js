@@ -34,11 +34,11 @@
                                 if (attrs.templateUrl) {
                                     compileScope = scope.$eval(attrs.templateUrl);
                                 }
-                                $compile(tpl)(compileScope)
+                                $compile(tpl)(compileScope);
                             }, function () {
-                                if (scope.$$destroyed) return;
+                                if (scope.$$destroyed) return{};
                             });
-                        };
+                        }
                 });
             }
         };
