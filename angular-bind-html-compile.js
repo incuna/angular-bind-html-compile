@@ -36,7 +36,7 @@
                                 }
                                 $compile(tpl)(compileScope);
                             }, function () {
-                                if (scope.$$destroyed) return{};
+                                if (scope.$$destroyed) {return;}
                             });
                         }
                 });
