@@ -16,16 +16,25 @@ Add dependency to your app module
 * `'angular-bind-html-compile'`
 
 ## Usage 
-`ng-bind-html`:
-```
-<div ng-bind-html="data.content"></div>
-```
-
-If the `data.content` contained a directive, it would not be compiled.
-
-`bind-html-compile`:
+Just like the standard `ng-bind-html`, `bind-html-compile` goes like this:
 ```
 <div bind-html-compile="data.content"></div>
+```
+
+(However, unlike the standard `ng-bind-html`, `bind-html-compile` compiles directives!)
+
+`template-url` attribute can be used to load a template file:
+```
+<div bind-html-compile template-url="data.templateUrl"></div>
+```
+or a static path:
+```
+<div bind-html-compile template-url="'partials/myTemplate.html'"></div>
+```
+
+Also both attributes can be used together for loading a "piece of html code" as well as a "template file":
+```
+<div bind-html-compile="data.content" template-url="data.templateUrl"></div>
 ```
 
 ## Development
