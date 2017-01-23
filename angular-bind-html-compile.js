@@ -8,9 +8,8 @@
             restrict: 'A',
             link: function (scope, element, attrs) {
 
-                //Here we will store wich is the previous compiled scope
+                // Here we will store wich is the previous compiled scope
                 var _previousCompiledScope = null;
-
                 scope.$watch(function () {
                     return scope.$eval(attrs.bindHtmlCompile);
                 }, function (value) {
@@ -19,8 +18,8 @@
                     // get the HTML string.
                     element.html(value && value.toString());
 
-                    //If we have a previousCompiled scope, just destroy it
-                    if(_previousCompiledScope !== null) {
+                    // If we have a previousCompiled scope, just destroy it
+                    if (_previousCompiledScope !== null) {
                         _previousCompiledScope.$destroy();
                     }
 
@@ -29,14 +28,12 @@
 
                     if (attrs.bindHtmlScope) {
                         compileScope = scope.$eval(attrs.bindHtmlScope);
-                    }
-                    else {
-                        //Create new scope (We can delete it)
+                    } else {
+                        // Create new scope (We can delete it)
                         compileScope = scope.$new(false);
                     }
 
                     _previousCompiledScope = compileScope;
-
 
                     $compile(element.contents())(compileScope);
                 });
