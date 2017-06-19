@@ -1,3 +1,7 @@
+# upcoming
+
+* Add possibility to install with `npm`
+
 ### 1.2.1
 
 * Change strict angular dependency to `~1.x`
