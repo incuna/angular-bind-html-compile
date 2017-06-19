@@ -1,4 +1,4 @@
-# upcoming
+## 1.4.0
 
 * Add possibility to install with `npm`
 
