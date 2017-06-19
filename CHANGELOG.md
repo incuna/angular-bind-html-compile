@@ -1,3 +1,11 @@
+### 1.2.1
+
+* Change strict angular dependency to `~1.x`
+
+## 1.2.0
+
+* Add a minified version of the library
+
 ## 1.1.0
 
 * Allow a specific scope to be passed in to the directive using `bind-html-scope`
