@@ -25,7 +25,7 @@
         };
     }]);
 
-    if (module && module.exports) {
+    if ('undefined' !== typeof module) {
         module.exports = bindHtmlCompile.name;
     }
 }(window.angular));
