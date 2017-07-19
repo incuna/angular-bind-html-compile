@@ -1,3 +1,7 @@
+### 1.4.1
+
+* Fix issue with `module` being `undefined` when using outside bundlers
+
 ## 1.4.0
 
 * Add possibility to install with `npm`
