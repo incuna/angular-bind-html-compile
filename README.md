@@ -28,6 +28,12 @@ If the `data.content` contained a directive, it would not be compiled.
 <div bind-html-compile="data.content"></div>
 ```
 
+NB: Remember to add 'angular-bind-html-compile' to app module requirements.
+`app.js`:
+```
+var myAppModule = angular.module('myApp', ['angular-bind-html-compile']);
+```
+
 ## Development
 * Contributions welcome - Create an issue to discuss proposed changes and additions
 * All contributions should be done in branches and submitted as pull requests.
