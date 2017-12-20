@@ -16,8 +16,17 @@
                     element.html(value && value.toString());
                     // If scope is provided use it, otherwise use parent scope
                     var compileScope = scope;
-                    if (attrs.bindHtmlScope) {
-                        compileScope = scope.$eval(attrs.bindHtmlScope);
+                    var obj = scope.$eval(attrs.mnBindHtmlScope)
+                    if (obj) {
+                        if (obj.$id) {
+                            compileScope = obj
+                        } else {
+                            // if an object, transform it to scope
+                            compileScope = scope.$new()
+                            for (var p in obj) {
+                                compileScope[p] = obj[p]
+                            }
+                        }
                     }
                     $compile(element.contents())(compileScope);
                 });
